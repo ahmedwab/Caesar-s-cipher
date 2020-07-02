@@ -1,5 +1,6 @@
-var rand=Math.floor(Math.random() * 24) + 1;
-function encrypt(){
+var rand=13; //number used for caesar cipher
+
+function encrypt(){ //function to encrypt text
   console.log(rand);
   var cipher="";
 
@@ -12,8 +13,10 @@ function encrypt(){
     output.value=cipher;
 
 
+
 }
-function decrypt(){
+
+function decrypt(){ //function to decrypt text
   var cipher="";
 
   var output=document.getElementById('input');
@@ -25,8 +28,9 @@ function decrypt(){
     output.value=cipher;
 
 
+
 }
-function isAlpha(c){
+function isAlpha(c){ //boolean is a letter
   var alphabet="abcdefghijklmnopqrstuvwxyz";
   for(var i = 0 ; i < alphabet.length; i++){
     if(c==alphabet[i]) return true;
@@ -35,8 +39,9 @@ function isAlpha(c){
 
 
 }
-function encrypt_change(c,r){
+function encrypt_change(c,r){ //encrypt character
   var alphabet="abcdefghijklmnopqrstuvwxyz";
+  c=c.toLowerCase();
   if (!isAlpha(c)) return c;
   var pos=0;
   for(var i = 0 ; i < alphabet.length; i++){
@@ -46,4 +51,13 @@ function encrypt_change(c,r){
 
 
 
+}
+function changenum(x){//change cipher number
+  if(x==1){
+    rand++;
+    rand=rand%26;
+  }
+  else rand--;
+  if(rand<0) rand=rand+25;
+    document.getElementById('rand').innerHTML="+"+rand;
 }

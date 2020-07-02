@@ -1,37 +1,45 @@
 body{
   background-color:rgb(245,245,245);
 }
-.textbox{
-  width:50%;
-}
-.header{
+
+.header{ /*header box */
+
+  position:relative;
+  width:100%;
   background-color:white;
+  height:10%;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
-#title{
-  padding:1%;
+#title{// /*title in header */
+  padding:5%;
   color: #00bfff	;
+  padding-left: 3%;
+  font-size: 30px;
 }
-.textbox,.btns{
+.textbox,.btns{ /* input and output boxes along with encrypt and decrypt buttons */
   display: block;
   margin-left: auto;
   margin-right: auto;
   border-radius:2%;
   border:none;
   width:50%;
+  font-size:20px;
 }
 
-.btns{
+.btns{ /* encrypt/decrypt buttons */
   margin-bottom:2%;
   background-color: #00bfff	;
-  font-size:17px;
+  font-size:25px;
   color:white;
 
+
 }
-.btns:hover{
+.btns:hover{ /* hover over encrypt/decrypt buttons */
   background-color: #24a0ed;
 
 }
-.footer {
+.footer { /* footer section */
    position: fixed;
    left: 0;
    bottom: 0;
@@ -40,7 +48,21 @@ body{
    color: white;
    padding-left:2%;
 }
-#gh{
+#gh{ /* github icon */
   width:5%;
   height:5%;
+}
+#num{
+  margin-left: 50%;
+  border-top: 2%;
+  color: #00bfff	;
+}
+.change{
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #00bfff	;
+}
+.change:hover{
+  color: navy;
 }
