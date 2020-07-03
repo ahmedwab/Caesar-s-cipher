@@ -42,11 +42,13 @@ body{
 .footer { /* footer section */
    position: fixed;
    left: 0;
+   top: auto;
    bottom: 0;
    width: 100%;
    background-color: #DCDCDC	;
    color: white;
    padding-left:2%;
+
 }
 #gh{ /* github icon */
   width:50px;
@@ -56,11 +58,13 @@ body{
   margin-left: 50%;
   border-top: 2%;
   color: #00bfff	;
+  margin-bottom: 10%;
 }
 .change{
   background: none;
   border: none;
   font-size: 24px;
+  margin-bottom: 5px;
   color: #00bfff	;
 }
 .change:hover{
