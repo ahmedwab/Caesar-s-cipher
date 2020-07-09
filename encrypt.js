@@ -1,35 +1,61 @@
-var rand=13; //number used for caesar cipher
+var val=13; //number used for caesar cipher
 
-function encrypt(){ //function to encrypt text
-  console.log(rand);
-  var cipher="";
 
-  var input=document.getElementById('input');
-  var ouptut=document.getElementById('output');
+function selecting(){
 
-  for(var i = 0 ; i < input.value.length; i++){
-    cipher += encrypt_change(input.value[i],rand);
+
+  if (document.getElementById('selector').value=='Caesar')
+  {
+    document.getElementById('num').style.visibility='visible';
   }
-    output.value=cipher;
+  else {
+      document.getElementById('num').style.visibility='hidden';
+  }
 
+}
+
+
+function encrypt(){
+
+
+
+  if (document.getElementById('selector').value=='Caesar')
+  {
+    caesar_encrypt(val);
+  }
+  else if (document.getElementById('selector').value=='Atbash')
+  {
+    atbash_encrypt();
+  }
+  else if (document.getElementById('selector').value=='ROT13')
+  {
+    caesar_encrypt(13);
+  }
+
+}
+function decrypt(){
+
+
+
+  if (document.getElementById('selector').value=='Caesar')
+  {
+    caesar_decrypt(val);
+  }
+  else if (document.getElementById('selector').value=='Atbash')
+  {
+    atbash_decrypt();
+  }
+  else if (document.getElementById('selector').value=='ROT13')
+  {
+    caesar_decrypt(13);
+  }
 
 
 }
 
-function decrypt(){ //function to decrypt text
-  var cipher="";
-
-  var output=document.getElementById('input');
-  var input=document.getElementById('output');
-
-  for(var i = 0 ; i < input.value.length; i++){
-    cipher += encrypt_change(input.value[i],26-rand);
-  }
-    output.value=cipher;
 
 
 
-}
 function isAlpha(c){ //boolean is a letter
   var alphabet="abcdefghijklmnopqrstuvwxyz";
   for(var i = 0 ; i < alphabet.length; i++){
@@ -39,7 +65,86 @@ function isAlpha(c){ //boolean is a letter
 
 
 }
-function encrypt_change(c,r){ //encrypt character
+
+//encryption functions for atbash encryption
+function atbash_encrypt(){ //function to encrypt text
+  var cipher="";
+
+  var input=document.getElementById('input');
+  var ouptut=document.getElementById('output');
+
+  for(var i = 0 ; i < input.value.length; i++){
+    cipher += atbash_encrypt_change(input.value[i]);
+  }
+    output.value=cipher;
+
+}
+function atbash_decrypt(){ //function to decrypt text
+  var cipher="";
+
+  var output=document.getElementById('input');
+  var input=document.getElementById('output');
+
+  for(var i = 0 ; i < input.value.length; i++){
+    cipher += atbash_encrypt_change(input.value[i]);
+  }
+    output.value=cipher;
+
+
+
+}
+
+function atbash_encrypt_change(c){ //encrypt character
+  var alphabet="abcdefghijklmnopqrstuvwxyz";
+  var reversed="zyxwvutsrqponmlkjihgfedcba";
+  c=c.toLowerCase();
+  if (!isAlpha(c)) return c;
+  var pos=0;
+  for(var i = 0 ; i < alphabet.length; i++){
+    if(c==alphabet[i]) pos=i;
+  }
+  return reversed[pos];
+
+
+
+}
+
+
+
+
+//encryption functions for caesar's cipher
+
+function caesar_encrypt(cipher_value){ //function to encrypt text
+  var cipher="";
+
+  var input=document.getElementById('input');
+  var ouptut=document.getElementById('output');
+
+  for(var i = 0 ; i < input.value.length; i++){
+    cipher += caesar_encrypt_change(input.value[i],cipher_value);
+  }
+    output.value=cipher;
+
+
+
+}
+
+function caesar_decrypt(cipher_value){ //function to decrypt text
+  var cipher="";
+
+  var output=document.getElementById('input');
+  var input=document.getElementById('output');
+
+  for(var i = 0 ; i < input.value.length; i++){
+    cipher += caesar_encrypt_change(input.value[i],26-cipher_value);
+  }
+    output.value=cipher;
+
+
+
+}
+
+function caesar_encrypt_change(c,r){ //encrypt character
   var alphabet="abcdefghijklmnopqrstuvwxyz";
   c=c.toLowerCase();
   if (!isAlpha(c)) return c;
@@ -52,12 +157,13 @@ function encrypt_change(c,r){ //encrypt character
 
 
 }
+
 function changenum(x){//change cipher number
   if(x==1){
-    rand++;
-    rand=rand%26;
+    val++;
+    val=val%26;
   }
-  else rand--;
-  if(rand<0) rand=rand+25;
-    document.getElementById('rand').innerHTML="+"+rand;
+  else val--;
+  if(val<0) val=val+25;
+    document.getElementById('val').innerHTML="+"+val;
 }

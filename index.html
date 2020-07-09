@@ -5,21 +5,29 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="stylesheet.css">
     <script src="encrypt.js"></script>
-    <title> Caesar's Cipher</title>
+    <title> Classic Ciphers</title>
   </head>
   <body>
     <div class="header">
-      <h3 id="title"> Caesar's Cipher</h3>
+      <h3 id="title"> Classic Ciphers</h3>
     </div>
     <div id ="controller">
       <br>
 
       <div>
+
+            <select name="ciphers" id="selector" onchange="selecting()">
+              <option value="Atbash">Atbash Cipher</option>
+              <option value="Caesar">Caesar's cipher</option>
+              <option value="ROT13">ROT13 cipher</option>
+
+
+          </select>
       <textarea name="input" id="input" rows="8" cols="80" class="textbox" placeholder="Write a message to get encrypted"  ></textarea>
       <button type="button" name="encrypt" onclick="encrypt()" class="btns">Encrypt</button>
       <textarea name="output"  id="output" is="output" rows="8" cols="80" class="textbox" placeholder="Write a message to decrypt"></textarea>
       <button type="button" name="decrypt" onclick="decrypt()" class="btns">Decrypt</button>
-      <div id="num"><button class="change" onclick="changenum(1)">+ </button><h2 id="rand">+13</h2>  <button class="change" onclick="changenum(2)"> - </button></div>
+      <div id="num"><button class="change" onclick="changenum(1)">+ </button><h2 id="val">+13</h2>  <button class="change" onclick="changenum(2)"> - </button></div>
 
 
       </div>

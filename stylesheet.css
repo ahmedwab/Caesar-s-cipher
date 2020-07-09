@@ -59,6 +59,7 @@ body{
   border-top: 2%;
   color: #00bfff	;
   margin-bottom: 10%;
+  visibility: hidden;
 }
 .change{
   background: none;
@@ -69,4 +70,15 @@ body{
 }
 .change:hover{
   color: navy;
+}
+#selector{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:50%;
+  border: none;
+  margin-bottom: 1%;
+  background-color:  #00bfff;
+  color: white;
+
 }
