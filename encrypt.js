@@ -167,3 +167,12 @@ function changenum(x){//change cipher number
   if(val<0) val=val+25;
     document.getElementById('val').innerHTML="+"+val;
 }
+
+//Atbash Cipher
+//The Atbash cipher is a substitution cipher with a specific key where the letters of the alphabet are reversed. I.e. all As are replaced with Zs, all Bs are replaced with Ys, and so on.
+
+//ROT13 Cipher
+//The ROT13 cipher is not really a cipher, more just a way to obscure information temporarily. It is often used to hide e.g. movie spoilers.
+
+//Caesar Cipher
+//The caesar cipher (a.k.a the shift cipher, Caesar's Code or Caesar Shift) is one of the earliest known and simplest ciphers.
