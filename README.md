@@ -15,8 +15,6 @@ The functioniality was written in JavaScript.
  [Website](https://ahmedwab.github.io/classic-ciphers/) https://ahmedwab.github.io/classic-ciphers/
 
 
-<img src="images/Web-Shot.png">
-
 
 ## Contributing
 Pull requests are welcome.For any structural or scripting changes, please open request to do so.
