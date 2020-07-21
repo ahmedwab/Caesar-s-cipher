@@ -3,7 +3,7 @@
 This Project uses different classic ciphers in order to cipher and decipher text. 
 The functioniality was written in JavaScript.
 The user can select the encoder code for the Caesar Cipher
-<img src="images/Web-image.png">
+<img src="images/Web-shot.png">
 
 # Online-encoder-decoder
 his Project uses different classic ciphers in order to cipher and decipher text. 
