@@ -21,7 +21,7 @@ body{
 #title{ /*title in header */
   padding:5%;
   color: white	;
-  padding-left: 3%;
+  padding-left: 4%;
   font-size: 30px;
 }
 #title:hover{
